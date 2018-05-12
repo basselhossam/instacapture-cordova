@@ -6,7 +6,8 @@
 android/.DS_Store
 ios/.DS_Store
 
-build/
+platforms/
+plugins/
 
 # Android
 .gradle
