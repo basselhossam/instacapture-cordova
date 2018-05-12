@@ -1,0 +1,52 @@
+ <?xml version="1.0" encoding="utf-8"?>
+    <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+            id="com.basselhossam.instacapture"
+            version="0.0.1">        
+      <name>InstaCapture</name> 
+
+      <engines>
+        <engine name="cordova-android" version=">=6.1.0"/>
+      </engines> 
+
+      <js-module src="www/instacapture.js" name="InstaCapture">
+        <clobbers target="window.InstaCapture" />
+      </js-module>    
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+           <feature name="InstaCaptureModule">
+              <param name="android-package" value="com.basselhossam.instacapture.InstaCaptureModule"/>
+           </feature>
+        </config-file>
+
+        <!-- com.basselhossam.instacature -->
+       <source-file src="src/android/com/basselhossam/instacapture/InstaCaptureModule.java" target-dir="app/src/main/java/com/basselhossam/instacapture"/>
+       <source-file src="src/android/com/basselhossam/instacapture/utility/FileUtility.java" target-dir="app/src/main/java/com/basselhossam/instacapture/utility"/>   
+       <!-- com.tarek360.instacapture -->
+       <source-file src="src/android/com/tarek360/instacapture/ActivityReferenceManager.java" target-dir="app/src/main/java/com/tarek360/instacapture"/>
+       <source-file src="src/android/com/tarek360/instacapture/Instacapture.java" target-dir="app/src/main/java/com/tarek360/instacapture"/> 
+       <source-file src="src/android/com/tarek360/instacapture/InstacaptureConfiguration.java" target-dir="app/src/main/java/com/tarek360/instacapture"/>
+       <!-- Utility -->
+       <source-file src="src/android/com/tarek360/instacapture/utility/Logger.java" target-dir="app/src/main/java/com/tarek360/instacapture/utility"/> 
+       <!-- Exception -->
+       <source-file src="src/android/com/tarek360/instacapture/exception/ActivityNotRunningException.java" target-dir="app/src/main/java/com/tarek360/instacapture/exception"/> 
+       <source-file src="src/android/com/tarek360/instacapture/exception/IllegalScreenSizeException.java" target-dir="app/src/main/java/com/tarek360/instacapture/exception"/> 
+       <source-file src="src/android/com/tarek360/instacapture/exception/ScreenCapturingFailedException.java" target-dir="app/src/main/java/com/tarek360/instacapture/exception"/>  
+       <!-- Listener --> 
+       <source-file src="src/android/com/tarek360/instacapture/listener/ScreenCaptureListener.java" target-dir="app/src/main/java/com/tarek360/instacapture/listener"/> 
+       <source-file src="src/android/com/tarek360/instacapture/listener/SimpleScreenCapturingListener.java" target-dir="app/src/main/java/com/tarek360/instacapture/listener"/> 
+       <!-- screenshot -->
+       <source-file src="src/android/com/tarek360/instacapture/screenshot/FieldHelper.java" target-dir="app/src/main/java/com/tarek360/instacapture/screenshot"/> 
+       <source-file src="src/android/com/tarek360/instacapture/screenshot/ScreenshotProvider.java" target-dir="app/src/main/java/com/tarek360/instacapture/screenshot"/> 
+       <source-file src="src/android/com/tarek360/instacapture/screenshot/ScreenshotTaker.java" target-dir="app/src/main/java/com/tarek360/instacapture/screenshot"/> 
+       <source-file src="src/android/com/tarek360/instacapture/screenshot/ViewsBitmapObservable.java" target-dir="app/src/main/java/com/tarek360/instacapture/screenshot"/> 
+       <source-file src="src/android/com/tarek360/instacapture/screenshot/RootViewInfo.kt" target-dir="app/src/main/java/com/tarek360/instacapture/screenshot"/> 
+
+       <framework src="com.android.support:appcompat-v7:24+" />
+       <framework src="com.android.support:support-annotations:24+" />
+       <framework src="io.reactivex:rxandroid:1.2.0" />
+       <framework src="io.reactivex:rxjava:1.1.9" />
+       <framework src="org.jetbrains.kotlin:kotlin-stdlib:1.0.6" />
+       <dependency id="cordova-support-kotlin" />
+   </platform>
+</plugin>

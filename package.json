@@ -1,0 +1,19 @@
+{
+  "name": "cordova-plugin-instacapture",
+  "version": "1.0.1",
+  "description": "cordova plugin instacapture",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basselhossam/cordova-plugin-instacapture.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Bassel Hossam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/basselhossam/cordova-plugin-instacapture/issues"
+  },
+  "homepage": "https://github.com/basselhossam/"
+}
