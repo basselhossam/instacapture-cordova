@@ -7,7 +7,7 @@ function onDeviceReady(){
 }
 
 function capture(){
-    InstaCapture.capture(function(url){
+    InstaCapture.captureScreenshot(function(url){
         console.log(url);
         //Do whatever you want with the url
         getImages()
@@ -21,7 +21,7 @@ function enableLogging(enable){
 }
 
 function setJpegCompressionQuality(){
-    InstaCapture.setJpegCompressionQuality(document.getElementByID("jpgcom").value);
+    InstaCapture.setJpegCompressionQuality(document.getElementById("jpgcom").value);
 }
 
 function getImages(){
@@ -30,7 +30,7 @@ function getImages(){
         for(var i in images){
             text += '<img src="' + images[i] + '" width="50%">';
         }
-        var div = document.getElementById('divID').innerHTML = text;
+        var div = document.getElementById('images').innerHTML = text;
 
     },function(err){
         console.log(err);
